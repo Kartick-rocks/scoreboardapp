@@ -37,9 +37,7 @@ import Player from './Player';
  }
 
 ];*/
-const desc = 'I just learned how to create a React node and render it to the DOM';
-const myTitleID = 'main-title';
-const name = 'Kartick';
+
 
 
 
@@ -109,6 +107,13 @@ class App extends Component {
 
   };
 
+  handleScoreChange(index, delta) {
+    this.setState(prevState => {
+      score: prevState.players[index].score += delta;
+    });
+   }
+
+
   handleRemovePlayer = (id) => {
     this.setState( prevState => {
       return {
@@ -124,12 +129,14 @@ class App extends Component {
       <Header title="My Scoreboard" totalPlayers={this.state.players.length}/>
 
 
-      {this.state.players.map( player =>
+      {this.state.players.map( (player, index) =>
         <Player
         name={player.name}
         score={player.score}
         id = {player.id}
         key = {player.id.toString()}
+        index = {index}
+        changeScore = {this.handleScoreChange}
         removePlayer = {this.handleRemovePlayer}
         />
 
