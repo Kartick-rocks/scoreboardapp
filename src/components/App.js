@@ -107,10 +107,10 @@ class App extends Component {
 
   };
 
-  handleScoreChange(index, delta) {
-    this.setState(prevState => {
-      score: prevState.players[index].score += delta;
-    });
+  handleScoreChange = (index, delta) => {
+    this.setState( prevState => ({
+      score: prevState.players[index].score += delta
+    }));
    }
 
 
