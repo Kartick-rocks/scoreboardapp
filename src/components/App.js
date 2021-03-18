@@ -126,7 +126,9 @@ class App extends Component {
   render() {
     return (
       <div className = "scoreboard">
-      <Header title="My Scoreboard" totalPlayers={this.state.players.length}/>
+      <Header title="My Scoreboard"
+       players = {this.state.players}
+       totalPlayers={this.state.players.length}/>
 
 
       {this.state.players.map( (player, index) =>
