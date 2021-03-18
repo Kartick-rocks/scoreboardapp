@@ -2,6 +2,7 @@ import React, {Component} from 'react'; //known as named import
 //import ReactDOM from 'react-dom';
 import Header from './Header';
 import Player from './Player';
+import AddPlayerForm from './AddPlayerForm';
 
 /*const title = React.createElement(
   'h1',
@@ -145,7 +146,7 @@ class App extends Component {
 
       )}
 
-
+      <AddPlayerForm />
       </div>
     );
 
