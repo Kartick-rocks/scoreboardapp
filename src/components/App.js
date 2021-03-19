@@ -117,9 +117,10 @@ class App extends Component {
    }
 
    handleAddPlayer = (name) => {
-     this.setState({
+     this.setState( prevState => {
+       return{
        players: [
-         ...this.state.players,
+         ...prevState.players,
          {
            name,
            score: 0,
@@ -127,6 +128,7 @@ class App extends Component {
          }
 
        ]
+     };
      });
 
    }
