@@ -23,7 +23,7 @@ class Stopwatch extends Component {
        const now = Date.now(); //Time elpased since Jan 1 1970
        this.setState(prevState => ({
          previousTime: now,
-         elapsedTime: prevState.elpasedTime + (now - this.state.previousTime)
+         elapsedTime: prevState.elapsedTime + (now - this.state.previousTime)
 
        }));
      }
@@ -49,9 +49,11 @@ class Stopwatch extends Component {
 
       <div className="stopwatch">
       <h2>Stopwatch</h2>
-      <span className="stopwatch-time">{seconds }</span>
+      <span className="stopwatch-time">
+      { seconds }
+      </span>
       <button onClick={this.handleStopwatch}>
-      { this.state.isRunning ? 'Stop' : 'Start '}
+      { this.state.isRunning ? 'Stop' : 'Start' }
        </button>
       <button onClick={this.handleReset}> Reset </button>
 
