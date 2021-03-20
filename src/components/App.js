@@ -116,6 +116,15 @@ class App extends Component {
     }));
    }
 
+   getHighScore = () => {
+  const scores = this.state.players.map( p => p.score );
+  const highScore = Math.max(...scores);
+  if (highScore) {
+    return highScore;
+  }
+  return null;
+}
+
    handleAddPlayer = (name) => {
      this.setState( prevState => {
        return{
@@ -160,6 +169,7 @@ class App extends Component {
         index = {index}
         changeScore = {this.handleScoreChange}
         removePlayer = {this.handleRemovePlayer}
+        isHighScore={highScore === player.score} 
         />
 
 
