@@ -17,6 +17,10 @@ class Stopwatch extends Component {
     this.intervalID = setInterval(() => this.tick(), 100);
   }
 
+  componentWillMount(){
+    clearInterval(this.intervalID); //This is to avoid any memory leaks in the application
+  }
+
   tick = () => {
 
      if (this.state.isRunning) {
